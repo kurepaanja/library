@@ -1,0 +1,263 @@
+<body>
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>{{korisnik.ime}} {{korisnik.prezime}}</h1>
+        <img src="../../assets/header_two.png"
+            style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+    </div>
+    <router-outlet></router-outlet>
+
+    <div class="center">
+
+
+        <div style="width:30%; float: left;">
+
+            <div *ngIf="knjiga.slika">
+                <img [src]="knjiga.slika" style="max-height:480px;max-width:300px;height:auto;width:auto;"
+                    class="img-fluid">
+            </div>
+            <div *ngIf="!knjiga.slika">
+                <img src="../../assets/nobook.jpg" style="max-height:480px;max-width:300px;height:auto;width:auto;"
+                    class="img-fluid">
+            </div>
+            <div *ngIf="moderator">
+                <div *ngIf="!upSlika">
+                    <a style="font-size:15px" (click)="promeniSlika()">edit</a>
+                </div>
+
+                <div *ngIf="upSlika">
+                    <input type="file" (change)="selectFile($event)"><a style="font-size:15px"
+                        (click)="updateSlika()">edit</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 70%; float:right; font-size: 20px; padding-top:70px ;">
+            <div *ngIf="moderator">
+                <div *ngIf="!upNaziv">
+                    <label>Naziv:</label>{{knjiga.naziv}}
+                    <a style="font-size:15px" (click)="promeniNaziv()">edit</a> <br>
+                </div>
+                <div *ngIf="upNaziv">
+                    <textarea placeholder="{{knjiga.naziv}}" [(ngModel)]="novTekst" style="width:200px"></textarea>
+                    <a style="font-size:15px" (click)="updateNaziv()">edit</a>
+                </div>
+                <div *ngIf="!upAutor">
+                    <label>Autor(i):</label>{{knjiga.autor}} <a style="font-size:15px"
+                        (click)="promeniAutor()">edit</a><br>
+                </div>
+                <div *ngIf="upAutor">
+                    <textarea placeholder="{{knjiga.autor}}" [(ngModel)]="novTekst" style="width:200px"></textarea>
+                    <a style="font-size:15px" (click)="updateAutor()">edit</a>
+                </div>
+                <div *ngIf="!upZanr">
+                    <label>Zanr:</label>{{knjiga.zanr}} <a style="font-size:15px" (click)="promeniZanr()">edit</a><br>
+                </div>
+                <div *ngIf="upZanr">
+                    <textarea placeholder="{{knjiga.zanr}}" [(ngModel)]="novTekst" style="width:200px"></textarea>
+                    <a style="font-size:15px" (click)="updateZanr()">edit</a>
+                </div>
+                <div *ngIf="!upIzdavac">
+                    <label>Izdavac:</label>{{knjiga.izdavac}} <a style="font-size:15px"
+                        (click)="promeniIzdavac()">edit</a><br>
+                </div>
+                <div *ngIf="upIzdavac">
+                    <textarea placeholder="{{knjiga.izdavac}}" [(ngModel)]="novTekst" style="width:200px"></textarea>
+                    <a style="font-size:15px" (click)="updateIzdavac()">edit</a>
+                </div>
+                <div *ngIf="!upGodina">
+                    <label>Godina izdanja:</label>{{knjiga.godinaIzdanja}} <a style="font-size:15px"
+                        (click)="promeniGodina()">edit</a><br>
+                </div>
+                <div *ngIf="upGodina">
+                    <textarea placeholder="{{knjiga.godinaIzdanja}}" [(ngModel)]="novTekst"
+                        style="width:200px"></textarea>
+                    <a style="font-size:15px" (click)="updateGodina()">edit</a>
+                </div>
+                <div *ngIf="!upJezik">
+                    <label>Jezik:</label>{{knjiga.jezik}} <a style="font-size:15px"
+                        (click)="promeniJezik()">edit</a><br>
+                </div>
+                <div *ngIf="upJezik">
+                    <textarea placeholder="{{knjiga.jezik}}" [(ngModel)]="novTekst" style="width:200px"></textarea>
+                    <a style="font-size:15px" (click)="updateJezik()">edit</a>
+                </div>
+                <div *ngIf="!upBrojKnjiga">
+                    <label>Broj Knjiga:</label>{{knjiga.brojKnjiga}} <a style="font-size:15px"
+                        (click)="promeniBrojKnjiga()">edit</a><br>
+                </div>
+                <div *ngIf="upBrojKnjiga">
+                    <textarea placeholder="{{knjiga.brojKnjiga}}" [(ngModel)]="novTekst" style="width:200px"></textarea>
+                    <a style="font-size:20px" (click)="updateBrojKnjiga()">edit</a>
+                </div>
+
+                <div *ngIf="imaKomentara">
+                    <label>Prosečna ocena:</label>{{prosecnaOcena}}<br>
+                </div>
+                <div *ngIf="!imaKomentara">
+                    <label>Prosečna ocena:</label>Data knjiga nije ocenjena<br>
+                </div>
+                
+                <div *ngIf="broj()">
+                    <div style="padding-left: 150px; padding-top: 30px;">
+                        <a (click)="zaduzi()">Zaduzi</a>
+                        {{message}}
+                    </div>
+
+                </div>
+                
+                <div *ngIf="!broj()">
+                    <div style="padding-left: 150px; padding-top: 30px;">
+                        <a (click)="rezervisi()">Rezervisi</a>
+                        {{message}}
+                    </div>
+                </div>
+                
+
+
+            </div>
+            <div *ngIf="!moderator">
+                <label>Naziv:</label>{{knjiga.naziv}} <br>
+                <label>Autor(i):</label>{{knjiga.autor}} <br>
+                <label>Zanr:</label>{{knjiga.zanr}} <br>
+                <label>Izdavac:</label>{{knjiga.izdavac}}<br>
+                <label>Godina izdanja:</label>{{knjiga.godinaIzdanja}}<br>
+                <label>Jezik:</label>{{knjiga.jezik}} <br>
+                <label>Broj Knjiga:</label>{{knjiga.brojKnjiga}} <br>
+                <div *ngIf="imaKomentara">
+                    <label>Prosečna ocena:</label>{{prosecnaOcena}}<br>
+                </div>
+                <div *ngIf="!imaKomentara">
+                    <label>Prosečna ocena:</label>Data knjiga nije ocenjena<br>
+                </div>
+                <div *ngIf="broj()">
+                    <div style="padding-left: 150px; padding-top: 30px;">
+                        <a (click)="zaduzi()">Zaduzi</a>
+                        {{message}}
+                    </div>
+
+                </div>
+                
+                <div *ngIf="!broj()">
+                    <div style="padding-left: 150px; padding-top: 30px;">
+                        <a (click)="rezervisi()">Rezervisi</a>
+                        {{message}}
+                    </div>
+                </div>
+                
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="center">
+        <h2>Komentari</h2>
+        <div *ngIf="imaKomentara">
+            <table>
+                <tr *ngFor="let k of sviKomentari, let i=index">
+                    <td><label>{{k.korisnickoIme}}</label></td>
+                    <td>
+                        <div *ngIf="ocenaJedaniliDva(k)">
+                            <label>{{k.ocena}}/10<br>
+                                <img src="../../assets/jedan_dva.png"
+                                    style="max-height:30px;max-width:30px;height:auto;width:auto;"
+                                    class="img-fluid"></label>
+                        </div>
+                        <div *ngIf="ocenaTriliCetiri(k)">
+                            <label> {{k.ocena}}/10<br>
+                                <img src="../../assets/tri_cetiri.png"
+                                    style="max-height:30px;max-width:30px;height:auto;width:auto;"
+                                    class="img-fluid"></label>
+                        </div>
+                        <div *ngIf="ocenaPetiliSest(k)">
+                            <label> {{k.ocena}}/10<br>
+                                <img src="../../assets/pet_sest.png"
+                                    style="max-height:30px;max-width:30px;height:auto;width:auto;"
+                                    class="img-fluid"></label>
+                        </div>
+                        <div *ngIf="ocenaSedamiliOsam(k)">
+                            <label> {{k.ocena}}/10<br>
+                                <img src="../../assets/sedam_osam.png"
+                                    style="max-height:30px;max-width:30px;height:auto;width:auto;"
+                                    class="img-fluid"></label>
+                        </div>
+                        <div *ngIf="ocenaDevetiliDeset(k)">
+                            <label> {{k.ocena}}/10<br>
+                                <img src="../../assets/devet_deset.png"
+                                    style="max-height:30px;max-width:30px;height:auto;width:auto;"
+                                    class="img-fluid"></label>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div *ngIf="!upKomentar[i]">
+                            <label>
+                                {{k.tekstKomentara}}<br>
+                                <div *ngIf="k.edited=='1'" style="font-size: 10px;">(edited)</div>
+                            </label>
+                        </div>
+                        <div *ngIf="upKomentar[i]">
+                            <textarea placeholder="{{k.tekstKomentara}}" [(ngModel)]="novTekst"></textarea>
+                        </div>
+
+                    </td>
+                    <td><label>{{k.datum_vreme}}</label></td>
+
+                    <td>
+                        <div *ngIf="!upKomentar[i]">
+                            <div *ngIf="mojKomentar(k.korisnickoIme)">
+                                <label><a (click)="promeniKomentar(i)">edit</a></label>
+                            </div>
+                            <div *ngIf="!mojKomentar(k.korisnickoIme)">
+                                <label><a></a></label>
+                            </div>
+                        </div>
+
+                        <div *ngIf="upKomentar[i]">
+                            <div *ngIf="mojKomentar(k.korisnickoIme)">
+                                <label><a (click)="updateKomentar(i,k.korisnickoIme,k.idKnjiga)">done</a></label>
+                            </div>
+                            <div *ngIf="!mojKomentar(k.korisnickoIme)">
+                                <label><a></a></label>
+                            </div>
+                        </div>
+
+
+                    </td>
+
+                </tr>
+            </table>
+
+
+        </div>
+        <div *ngIf="!imaKomentara">
+            Data knjiga nema komentara.
+        </div>
+        <!-- KOMENTAR -->
+        <div>
+            <textarea name="new" style="width: 400px;" [(ngModel)]="tekstNovogKomentara"></textarea><br>
+            Ocenite:<select [(ngModel)]="ocenaNovogKomentara">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <a (click)="dodajKomentar()">Komentarisi</a>
+            {{messageKoment}}
+        </div>
+    </div>
+
+
+    <div class="footer">Telvanni inc.</div>
+</body>

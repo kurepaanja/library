@@ -1,0 +1,94 @@
+<body>
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>{{korisnik.ime}} {{korisnik.prezime}} - Profil</h1>
+        <img src="../../assets/header_two.png"
+            style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+    </div>
+    <router-outlet></router-outlet>
+
+
+<div class="center">
+    <div class="centerOne">
+        <div *ngIf="hasImage">
+            <div *ngIf="!upSlika">
+                <a style="font-size: 13px;" (click)="promeniSlika()">edit</a>
+            </div>
+            <div *ngIf="upSlika">
+                <input type="file" (change)="selectFile($event)">
+                <a style="font-size: 13px;" (click)="updateSlika()">done</a>
+            </div>
+            <img [src]="korisnik.slika" style="max-width: 200px; max-height: 200px;" class="img-fluid">
+        </div>
+        <div *ngIf="!hasImage" >
+            <div *ngIf="!upSlika">
+                <a style="font-size: 13px;" (click)="promeniSlika()">edit</a>
+            </div>
+            <div *ngIf="upSlika">
+                <input type="file" (change)="selectFile($event)">
+                <a style="font-size: 13px;" (click)="updateSlika()">done</a>
+            </div>
+            <img src="../../assets/noicon.jpg" style="max-width: 200px; max-height: 200px;" class="img-fluid">
+        </div>
+
+        <div *ngIf="!upIme">
+            Ime: {{korisnik.ime}}<a style="font-size: 15px;padding-left: 10px;" (click)="promeniIme()">edit</a><br>
+        </div>
+        <div *ngIf="upIme">
+            <textarea [(ngModel)]="novTekst" placeholder="{{korisnik.ime}}"></textarea><a
+                style="font-size: 15px;padding-left: 10px;" (click)="updateIme()">done</a><br>
+        </div>
+        <div *ngIf="!upPrezime">
+            Prezime: {{korisnik.prezime}}<a style="font-size: 15px;padding-left: 10px;"
+                (click)="promeniPrezime()">edit</a><br>
+        </div>
+        <div *ngIf="upPrezime">
+            <textarea [(ngModel)]="novTekst" placeholder="{{korisnik.prezime}}"></textarea><a
+                style="font-size: 15px;padding-left: 10px;" (click)="updatePrezime()">done</a><br>
+        </div>
+        <div *ngIf="!upKor">
+            Korisnicko ime: {{korisnik.korisnickoIme}}<a style="font-size: 15px;padding-left: 10px;"
+                (click)="promeniKor()">edit</a><br>
+        </div>
+        <div *ngIf="upKor">
+            <textarea [(ngModel)]="novTekst" placeholder="{{korisnik.korisnickoIme}}"></textarea><a
+                style="font-size: 15px;padding-left: 10px;" (click)="updateKor()">done</a><br>
+        </div>
+        <div *ngIf="!upTelefon">
+            Mobilni telefon: {{korisnik.telefon}}<a style="font-size: 15px;padding-left: 10px;"
+                (click)="promeniTelefon()">edit</a><br>
+        </div>
+        <div *ngIf="upTelefon">
+            <textarea [(ngModel)]="novTekst" placeholder="{{korisnik.telefon}}"></textarea><a
+                style="font-size: 15px;padding-left: 10px;" (click)="updateTelefon()">done</a><br>
+        </div>
+        <div *ngIf="!upAdresa">
+            Adresa: {{korisnik.adresa}}<a style="font-size: 15px;padding-left: 10px;"
+                (click)="promeniAdresa()">edit</a><br>
+        </div>
+        <div *ngIf="upAdresa">
+            <textarea [(ngModel)]="novTekst" placeholder="{{korisnik.adresa}}"></textarea><a
+                style="font-size: 15px;padding-left: 10px;" (click)="updateAdresa()">done</a><br>
+        </div>
+        <div *ngIf="!upEmail">
+            Email: {{korisnik.email}}<a style="font-size: 15px;padding-left: 10px;"
+                (click)="promeniEmail()">edit</a>
+        </div>
+        <div *ngIf="upEmail">
+            <textarea [(ngModel)]="novTekst" placeholder="{{korisnik.adresa}}"></textarea><a
+                style="font-size: 15px;padding-left: 10px;" (click)="updateEmail()">done</a><br>
+        </div>
+    </div>
+    <div class="centerTwo" *ngIf="korisnik.tip!='3'">
+        <canvas baseChart [data]="barChartOneData" [options]="barChartOneOptions" [plugins]="barChartOnePlugins"
+        [legend]="barChartOneLegend" [type]="'bar'">
+    </canvas>
+    <canvas baseChart [data]="barChartTwoData" [options]="barChartTwoOptions" [plugins]="barChartTwoPlugins"
+    [legend]="barChartTwoLegend" [type]="'bar'">
+</canvas>
+    </div>
+</div>
+
+
+    <div class="footer">Telvanni inc.</div>
+</body>

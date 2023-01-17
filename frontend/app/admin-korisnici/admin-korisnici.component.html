@@ -1,0 +1,183 @@
+<body>
+
+   <div class="header">
+      <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+      <h1>{{korisnik.ime}} {{korisnik.prezime}}</h1>
+      <img src="../../assets/header_two.png"
+         style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+   </div>
+
+   <router-outlet></router-outlet>
+
+
+
+
+
+
+   <div class="center">
+      <h2>Korisnici:</h2>
+      <table class="container">
+         <tr>
+            <th style="min-width: 150px">
+               Ime
+            </th>
+            <tH style="min-width: 150px">
+               Korisnicko ime
+            </tH>
+            <th style="min-width: 150px">Lozinka</th>
+            <th style="min-width: 150px">Tip</th>
+            <th style="min-width: 150px">Adresa</th>
+            <th style="min-width: 150px">Telefon</th>
+            <th style="min-width: 150px">Email</th>
+            <th style="min-width: 150px">Profilna</th>
+         </tr>
+         <tr *ngFor="let k of sviKorisnici; let i=index; ">
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upIme[i]">
+
+                  {{k.ime}} {{k.prezime}}
+                  <a style="font-size:10px" (click)="promeniIme(i)">edit</a>
+
+               </div>
+               <div *ngIf="upIme[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateIme(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upKor[i]">
+
+                  {{k.korisnickoIme}}
+                  <a style="font-size:10px" (click)="promeniKor(i)">edit</a>
+
+               </div>
+               <div *ngIf="upKor[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateKor(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upSifra[i]">
+
+                  {{k.lozinka}}
+                  <a style="font-size:10px" (click)="promeniSifra(i)">edit</a>
+
+               </div>
+               <div *ngIf="upSifra[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateSifra(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf=" korCitalac(k.tip)">
+                  Citalac <a style="font-size:10px" (click)="povecajTip(i,k.korisnickoIme)">up</a>
+               </div>
+               <div *ngIf="korModerator(k.tip)">
+                  Moderator <a style="font-size:10px" (click)="smanjiTip(i,k.korisnickoIme)">down</a>
+               </div>
+               <div *ngIf="korBlokiran(k.tip)">
+                  Blokiran
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upAdresa[i]">
+
+                  {{k.adresa}}
+                  <a style="font-size:10px" (click)="promeniAdresa(i)">edit</a>
+
+               </div>
+               <div *ngIf="upAdresa[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateAdresa(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upTelefon[i]">
+
+                  {{k.telefon}}
+                  <a style="font-size:10px" (click)="promeniTelefon(i)">edit</a>
+
+               </div>
+               <div *ngIf="upTelefon[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateTelefon(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upEmail[i]">
+
+                  {{k.email}}
+                  <a style="font-size:10px" (click)="promeniEmail(i)">edit</a>
+
+               </div>
+               <div *ngIf="upEmail[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateEmail(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upSlika[i]">
+                  <div *ngIf="k.slika">
+                     <img [src]="k.slika" style="width: 50px; height: 50px;" class="img-fluid">
+                  </div>
+                  <div *ngIf="!k.slika">
+                     <img src="../../assets/noicon.jpg" style="width: 50px; height: 50px;" class="img-fluid">
+                  </div>
+
+                  <a style="font-size:10px" (click)="promeniSlika(i)">edit</a>
+
+               </div>
+               <div *ngIf="upSlika[i]">
+                  <input type="file" (change)="selectFile($event)">
+                  <a style="font-size:10px" (click)="updateSlika(i,k.korisnickoIme)">edit</a>
+               </div>
+            </td>
+
+            <td>
+               <a style="font-size:15px" (click)="izbrisiKor(k.korisnickoIme)">brisi</a>
+            </td>
+
+            <td>
+               <div *ngIf="!korBlokiran(k.tip)">
+                  <a style="font-size:15px" (click)="blokirajKor(k.korisnickoIme)">blokiraj</a>
+               </div>
+               <div *ngIf="korBlokiran(k.tip)">
+                  <a style="font-size:15px" (click)="oblokirajKor(k.korisnickoIme)">odblokiraj</a>
+               </div>
+               
+            </td>
+
+
+
+
+         </tr>
+      </table>
+      <hr>
+      <h2>Dodaj korisnika</h2>
+      <form [formGroup]="registerForm">
+         <label>Ime:</label><input class="form-control" formControlName="ime"><br>
+         <label>Prezime:</label><input class="form-control" formControlName="prezime"><br>
+         <label>Korisnicko Ime:</label><input class="form-control" formControlName="korisnickoIme"><br>
+         <label>Lozinka:</label><input class="form-control" formControlName="lozinka"><br>
+         <label>Ponoviti lozinku:</label><input class="form-control" formControlName="lozinkaConfirm">
+         <span *ngIf="f['lozinkaConfirm'].getError('mustMatch')!=null" class="errormessage">
+            <p style="color: red;">Sifre se ne uklapaju</p>
+         </span><br>
+         <label>Adresa:</label><input class="form-control" formControlName="adresa"><br>
+         <label>Email adresa:</label><input class="form-control" formControlName="email"><br>
+         <label>Telefon:</label><input class="form-control" formControlName="telefon"><br>
+         <label>Slika:</label><input type="file" (change)="selectFile($event)">
+      </form>
+      <br>
+      <a (click)="register()">Register</a>
+      {{warning}}
+   </div>
+</body>
+
+<div class="footer">Telvanni inc.</div>

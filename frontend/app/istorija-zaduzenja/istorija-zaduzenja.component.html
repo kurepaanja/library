@@ -1,0 +1,78 @@
+<body>
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>{{korisnik.ime}} {{korisnik.prezime}} - Istorija zaduzenja</h1>
+        <img src="../../assets/header_two.png"
+            style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+    </div>
+    <router-outlet></router-outlet>
+
+    <div class="center">
+
+        <div *ngIf="imaZaduzenja">
+            <div style="text-align: center; width: auto; padding-left: 250px;" class="topnav">
+
+                <div *ngIf="nazivDS">
+                    <a (click)="f_nazivAS()">Naziv ↑</a>
+                </div>
+                <div *ngIf="!nazivDS">
+                    <a (click)="f_nazivDS()">Naziv ↓</a>
+                </div>
+
+                <div *ngIf="autorDS">
+                    <a (click)="f_autorAS()">Autor ↑</a>
+                </div>
+                <div *ngIf="!autorDS">
+                    <a (click)="f_autorDS()">Autor ↓</a>
+                </div>
+
+                <div *ngIf="datumZadDS">
+                    <a (click)="f_datumZadAS()">Datum zaduzenja ↑</a>
+                </div>
+                <div *ngIf="!datumZadDS">
+                    <a (click)="f_datumZadDS()">Datum zaduzenja ↓</a>
+                </div>
+
+
+
+                <div *ngIf="datumVracDS">
+                    <a (click)="f_datumVracAS()">Datum vracanja ↑</a>
+                </div>
+                <div *ngIf="!datumVracDS">
+                    <a (click)="f_datumVracDS()">Datum vracanja ↓</a>
+                </div>
+
+            </div>
+            <table class="container">
+                <tr *ngFor="let b of listaZaduzenjeKnjiga">
+                    <div *ngIf="b.slika">
+
+                        <td style="min-width: 100px"> <img [src]="b.slika"
+                                style="max-height:100px;max-width:100px;height:auto;width:auto;" class="img-fluid">
+                        </td>
+                    </div>
+                    <div *ngIf="!b.slika">
+                        <td style="min-width: 100px"> <img src="../../assets/nobook.jpg"
+                                style="max-height:100px;max-width:100px;height:auto;width:auto;" class="img-fluid">
+                        </td>
+                    </div>
+                    <td style="min-width: 150px; font-size: 20px;">{{b.naziv}}</td>
+                    <td style="min-width: 150px; font-size: 20px;">{{b.autor}}</td>
+                    <td style="min-width: 150px; font-size: 20px;">{{b.datumZaduzenja}}</td>
+                    <td style="min-width: 150px; font-size: 20px;">{{b.datumVracanja}}</td>
+                    <td style="min-width: 150px; font-size: 20px;">
+                        <a style="width: 100px;" (click)="routeKnjiga(b.idKnjiga)">Detalji</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div *ngIf="!imaZaduzenja">
+            Nema starih zaduzenja.
+        </div>
+    </div>
+
+    <div class="footer">
+        Telvanni inc.
+    </div>
+</body>

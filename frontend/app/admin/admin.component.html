@@ -1,0 +1,30 @@
+<body>
+
+   <div class="header">
+      <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;"  class="img-fluid">
+      <h1>{{korisnik.ime}} {{korisnik.prezime}}</h1>
+      <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;"  class="img-fluid">
+  </div>
+ 
+   <router-outlet></router-outlet>
+
+   <div class="center">
+      <h2>Promena roka za vracanje knjige i produzenje:</h2>
+      <div style=" font-size: 19px;
+      width: 500px;
+      display: inline-block;
+      margin:4px;">Trenutni rok i produzenje su {{trenutniRok}} dana</div>
+      <hr>
+
+      <label>Nova vrednost za rok i produzenje:</label><input type="text" [(ngModel)]="novRok">
+      <a style="padding-left: 40px;" (click)="promenaRoka()">Azuriraj</a>
+      {{warning}}
+      <!-- <br>
+      <label>Nova vrednost za produzenje:</label><input type="text" [(ngModel)]="novoProduzenje">
+      <a style="padding-left: 40px;" (click)="promenaProduzenja()">Azuriraj</a> -->
+      {{warning}}
+
+   </div>
+
+   <div class="footer">Telvanni inc.</div>
+</body>

@@ -1,0 +1,91 @@
+<body>
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>Pretraga</h1>
+        <img src="../../assets/header_two.png"
+            style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+    </div>
+    <router-outlet></router-outlet>
+    
+    <div class="center">
+        
+        <table class="container">
+            
+                
+            
+            <tr class="row">
+                <th>Autor:</th>
+                <th>Naslov:</th>
+                <th>Zanr:</th>
+                <th>Godina od:</th>
+                <th>Godina do:</th>
+                <th>Izdavac:</th>
+            </tr>
+            <tr class="row">
+                <td><input type="text" [(ngModel)]="autor"></td>
+                <td><input type="text" [(ngModel)]="naslov"></td>
+                <td>
+                   <mat-form-field> 
+                        <mat-label>Zanrovi</mat-label>
+                        <mat-select [formControl]="toppings" class="my-select-panel-class" multiple>
+                          <mat-option style="color: white" value="Fantazija">Fantazija</mat-option>
+                          <mat-option style="color: white" value="Avantura">Avantura</mat-option>
+                          <mat-option style="color: white" value="Drama">Drama</mat-option>
+                          <mat-option style="color: white" value="Mitologija">Mitologija</mat-option>
+                          <mat-option style="color: white" value="Klasicna knjizevnost">Klasicna knjizevnost</mat-option>
+                        </mat-select>
+                      </mat-form-field> 
+                </td>
+                <td><input [(ngModel)]="godinaOd"> </td>
+                <td><input [(ngModel)]="godinaDo"></td>
+                <td><input type="text" [(ngModel)]="izdavac"></td>
+            </tr>
+
+
+        </table>
+
+        <a (click)="potrazi()">Pretrazi</a>
+        <div *ngIf="!nemaKnjiga">
+            <div *ngIf="potraga">
+
+                <div style="padding-left: 50px;padding-right: 50px;padding-top: 40px;">
+                    <table>
+                        <tr>
+                            <th>Slika knjige</th>
+                            <th>Naziv</th>
+                            <th>Autor(i)</th>
+                            <th>Zanr</th>
+                            <th>Godina izdanja</th>
+                            <th>Izdavac</th>
+
+                        </tr>
+                        <tr *ngFor="let b of pronadjeneKnjige">
+                            <div *ngIf="b.slika">
+                                <td style="min-width: 80px;"> <img [src]="b.slika"
+                                        style="max-height:100px;max-width:100px;height:auto;width:auto;"
+                                        class="img-fluid" (click)="routeKnjiga(b)"> </td>
+                            </div>
+                            <div *ngIf="!b.slika">
+                                <td style="min-width: 80px;"> <img src="../../assets/nobook.jpg"
+                                        style="max-height:100px;max-width:100px;height:auto;width:auto;"
+                                        class="img-fluid" (click)="routeKnjiga(b)"> </td>
+                            </div>
+
+                            <td style="min-width: 80px;">{{b.naziv}}</td>
+                            <td style="min-width: 80px;">{{b.autor}}</td>
+                            <td style="min-width: 80px;">{{b.zanr}}</td>
+                            <td style="min-width: 80px;">{{b.godinaIzdanja}}</td>
+                            <td style="min-width: 80px;">{{b.izdavac}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="nemaKnjiga">
+            Knjiga sa ovakvim parametrima ne postoji
+        </div>
+    </div>
+
+
+    <div class="footer">Telvanni inc.</div>
+</body>

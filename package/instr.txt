@@ -1,0 +1,8 @@
+1.angular material 
+
+ng add @angular/material
+
+2.charts
+
+ng add ng2-charts
+npm install chart.js --save

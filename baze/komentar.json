@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "63191eba9bfe2941b6d58bda"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "adam",
+  "tekstKomentara": "Prekratka knjiga,al dobra prica",
+  "ocena": 6,
+  "datum_vreme": "2022-04-22 02:56:59",
+  "edited": "0"
+},{
+  "_id": {
+    "$oid": "63191eba9bfe2941b6d58bdb"
+  },
+  "idKnjiga": "1",
+  "korisnickoIme": "ivana",
+  "tekstKomentara": "nevidjeni gas",
+  "ocena": 9,
+  "datum_vreme": "2022-02-12 14:56:59",
+  "edited": "0"
+},{
+  "_id": {
+    "$oid": "63191eba9bfe2941b6d58bdc"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "pera",
+  "tekstKomentara": "Bilbo 4lyfe",
+  "ocena": 8,
+  "datum_vreme": "2021-12-22 19:02:01",
+  "edited": "1"
+},{
+  "_id": {
+    "$oid": "63191eba9bfe2941b6d58bdd"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "stefan",
+  "tekstKomentara": "Fantazija je tresh",
+  "ocena": 1,
+  "datum_vreme": "2022-04-22 08:56:59",
+  "edited": "0"
+},{
+  "_id": {
+    "$oid": "631b9c372bd449b901e17d00"
+  },
+  "idKnjiga": "1",
+  "korisnickoIme": "adam",
+  "tekstKomentara": "voznjicaa",
+  "ocena": 8,
+  "datum_vreme": "2022-9-9 22:04:07",
+  "__v": 0,
+  "edited": "1"
+},{
+  "_id": {
+    "$oid": "631cf98afa0fe4cd43b68ace"
+  },
+  "idKnjiga": "6",
+  "korisnickoIme": "marija",
+  "tekstKomentara": "Moja mladost :')",
+  "ocena": 8,
+  "datum_vreme": "2022-10-9 22:54:34",
+  "__v": 0,
+  "edited": "1"
+},{
+  "_id": {
+    "$oid": "631f98daa6d844cd2951df63"
+  },
+  "idKnjiga": "4",
+  "korisnickoIme": "pera",
+  "tekstKomentara": "Klasik koji svi treba da procitaju",
+  "ocena": 10,
+  "datum_vreme": "2022-12-9 22:38:50",
+  "__v": 0,
+  "edited": "1"
+},{
+  "_id": {
+    "$oid": "6320c083bb0cae852f6c884e"
+  },
+  "idKnjiga": "2",
+  "korisnickoIme": "pera",
+  "tekstKomentara": "Uspeh zavisi previse od prethodne knjige :(",
+  "ocena": 3,
+  "datum_vreme": "2022-13-9 19:40:19",
+  "edited": "0",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324f415f03fe780b2da0708"
+  },
+  "idKnjiga": "13",
+  "korisnickoIme": "mihailo",
+  "tekstKomentara": "Predobro nacrtano!!!",
+  "ocena": 10,
+  "datum_vreme": "2022-09-17 00:09:25",
+  "edited": "1",
+  "__v": 0
+}]

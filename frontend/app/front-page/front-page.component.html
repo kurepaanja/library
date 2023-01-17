@@ -1,0 +1,42 @@
+
+<body>
+
+<div class="header">
+    <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;"  class="img-fluid">
+    <h1>Pocetna strana</h1> 
+    <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;"  class="img-fluid">
+</div>
+<router-outlet></router-outlet>
+
+    <div class="center">
+        <h2 style="text-align: center;">Top 3 knjige</h2>
+
+         <table>
+            
+            <tr *ngFor="let k of top3Knjige" style="text-align: center;">
+               
+                <div class=" container">
+                <td>
+                    <div *ngIf="k.slika">
+                        <img [src]="k.slika" style="height: 250px; width: 180px;padding-left: 90px;" class="img-fluid">
+                    </div>
+                    <div *ngIf="!k.slika">
+                        <img src="../../assets/nobook.jpg" style="height: 250px; width: 180px; padding-left: 90px;" class="img-fluid">
+                    </div>
+                </td>
+                <div class="overlay">
+                    <div class="text">
+                        <td>{{k.naziv}}</td><br>
+                        <td>{{k.autor}}</td>
+                    </div>
+                </div>
+
+    </div>
+    </tr>
+
+    </table> 
+    </div>
+
+
+<div class="footer" style="color: #f3ddc0;;">Telvanni inc.</div>
+</body>

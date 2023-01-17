@@ -1,0 +1,29 @@
+<body>
+
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>{{korisnik.ime}} {{korisnik.prezime}} - Promena sifre</h1>
+        <img src="../../assets/header_two.png"
+           style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+     </div>
+
+<router-outlet></router-outlet>  
+
+<div class="center" >
+    <label>Stara sifra:</label><input type="text" [(ngModel)]="staraSifra"><br>
+    <form [formGroup]="form">       
+        <label>Lozinka:</label><input class="form-control" formControlName="novaSifra"><br>
+        <label>Ponoviti lozinku:</label><input class="form-control" formControlName="ponovoNovaSifra">
+        <span *ngIf="f['ponovoNovaSifra'].getError('mustMatch')!=null" class="errormessage"><p style="color: red;">Sifre se ne uklapaju</p></span><br>
+    </form>
+    <br>
+    <a (click)="promeniSifru()">Promeni sifru</a>
+    <br>
+    <p style="color:red">{{message}}</p>
+</div>
+
+
+<div class="footer">
+    Telvanni inc.
+</div>
+</body>

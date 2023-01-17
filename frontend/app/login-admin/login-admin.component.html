@@ -1,0 +1,23 @@
+<body>
+
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>Login admin</h1>
+        <img src="../../assets/header_two.png"
+            style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+    </div>
+
+
+    <div class="center">
+        <label>Korisnicko ime:</label><input type="text" [(ngModel)]="korisnickoIme"><br>
+        <label>Lozinka</label><input type="password" [(ngModel)]="lozinka"><br>
+        <a (click)="login()">Login</a><br>
+        {{poruka}}
+    </div>
+
+
+
+    <div class="footer">
+        Telvanni. Inc
+    </div>
+</body>

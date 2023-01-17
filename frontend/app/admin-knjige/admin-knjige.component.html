@@ -1,0 +1,165 @@
+<body>
+
+   <div class="header">
+      <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+      <h1>{{korisnik.ime}} {{korisnik.prezime}}</h1>
+      <img src="../../assets/header_two.png"
+         style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+   </div>
+
+  
+   <router-outlet></router-outlet>
+
+   <div class="center">
+      <h2>Knjige</h2>
+      <table class="container">
+         <tr>
+            <th style="min-width: 150px">Naziv</th>
+            <th style="min-width: 150px">Autor(i)</th>
+            <th style="min-width: 150px">Zanr</th>
+            <th style="min-width: 150px">Izdavac</th>
+            <th style="min-width: 150px">Godina izdanja</th>
+            <th style="min-width: 150px">Jezik</th>
+            <th style="min-width: 150px">Na stanju</th>
+            <th style="min-width: 150px">Slika</th>
+         </tr>
+         <tr *ngFor="let b of sveKnjige; let i=index">
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upNaziv[i]">
+                  {{b.naziv}}
+                  <a style="font-size:10px" (click)="promeniNaziv(i)">edit</a>
+
+               </div>
+               <div *ngIf="upNaziv[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateNaziv(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upAutor[i]">
+                  {{b.autor}}
+                  <a style="font-size:10px" (click)="promeniAutor(i)">edit</a>
+
+               </div>
+               <div *ngIf="upAutor[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateAutor(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upZanr[i]">
+                  {{b.zanr}}
+                  <a style="font-size:10px" (click)="promeniZanr(i)">edit</a>
+
+               </div>
+               <div *ngIf="upZanr[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateZanr(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upIzdavac[i]">
+                  {{b.izdavac}}
+                  <a style="font-size:10px" (click)="promeniIzdavac(i)">edit</a>
+
+               </div>
+               <div *ngIf="upIzdavac[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateIzdavac(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upGodina[i]">
+                  {{b.godinaIzdanja}}
+                  <a style="font-size:10px" (click)="promeniGodina(i)">edit</a>
+
+               </div>
+               <div *ngIf="upGodina[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateGodina(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upJezik[i]">
+                  {{b.jezik}}
+                  <a style="font-size:10px" (click)="promeniJezik(i)">edit</a>
+
+               </div>
+               <div *ngIf="upJezik[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateJezik(i,b.id)">edit</a>
+               </div>
+            </td>
+
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upBrojKnjiga[i]">
+                  {{b.brojKnjiga}}
+                  <a style="font-size:10px" (click)="promeniBrojKnjiga(i)">edit</a>
+
+               </div>
+               <div *ngIf="upBrojKnjiga[i]">
+                  <textarea [(ngModel)]="novTekst"></textarea>
+                  <a style="font-size:10px" (click)="updateBrojKnjiga(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td style="min-width: 150px; text-align: center;">
+               <div *ngIf="!upSlika[i]">
+                  <div *ngIf="b.slika">
+                     <img [src]="b.slika" style="width: 50px; height: 50px;" class="img-fluid">
+                  </div>
+                  <div *ngIf="!b.slika">
+                     <img src="../../assets/nobook.jpg" style="width: 50px; height: 50px;" class="img-fluid">
+                  </div>
+
+                  <a style="font-size:10px" (click)="promeniSlika(i)">edit</a>
+
+               </div>
+               <div *ngIf="upSlika[i]">
+                  <input type="file" (change)="selectFile($event)">
+                  <a style="font-size:10px" (click)="updateSlika(i,b.id)">edit</a>
+               </div>
+            </td>
+
+            <td>
+               <a style="font-size:15px" (click)="brisiKnjigu(b.id,b.naziv)">obrisi</a>
+            </td>
+
+
+         </tr>
+      </table>
+
+
+      <hr>
+      <h2>Dodaj knjigu</h2>
+
+      <form [formGroup]="form">
+         <label>Naziv:</label><input class="form-control" formControlName="naziv"><br>
+         <label>Autor(i):</label><input class="form-control" formControlName="autor"><br>
+         <label>Zanr:</label>
+         <div *ngFor="let z of zanrovi">
+            <input type="checkbox" formArrayName="zanr" [value]="z.value" (change)="onCheckboxChange($event)">{{z.name}}
+         </div>
+         <br>
+         <label>Izdavac:</label><input class="form-control" formControlName="izdavac"><br>
+         <label>Godina izdanja:</label><input class="form-control" formControlName="godinaIzdanja"><br>
+         <label>Jezik:</label><input class="form-control" formControlName="jezik"><br>
+         <label>Broj za dodavanje:</label><input class="form-control" formControlName="ukupno"><br>
+
+         <label>Slika:</label><input type="file" (change)="selectFile($event)">
+      </form>
+      <br>
+      <a (click)="dodajKnjigu()">Dodaj</a>
+      <label>{{message}}</label>
+   </div>
+
+
+   <div class="footer">Telvanni inc.</div>
+</body>

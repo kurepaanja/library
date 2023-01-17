@@ -1,0 +1,103 @@
+<body>
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>
+            <div *ngIf="tip==2">
+                {{korisnik.ime}} {{korisnik.prezime}} - Dodaj knjigu
+            </div>
+            <div *ngIf="tip==1">
+                {{korisnik.ime}} {{korisnik.prezime}} - Zahteva za knjigu
+            </div>
+        </h1>
+        <img src="../../assets/header_two.png"
+            style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+    </div>
+    <router-outlet></router-outlet>
+
+    <div class="center">
+        <div *ngIf="tip==2">
+            <h2>Dodaj knjigu</h2>
+            <form [formGroup]="form">
+                <label>Naziv:</label><input class="form-control" formControlName="naziv"><br>
+                <label>Autor(i):</label><input class="form-control" formControlName="autor"><br>
+                <label>Zanr:</label>
+                <div *ngFor="let z of zanrovi">
+                    <input type="checkbox" formArrayName="zanr" [value]="z.value"
+                        (change)="onCheckboxChange($event)">{{z.name}}
+                </div>
+                <br>
+                <label>Izdavac:</label><input class="form-control" formControlName="izdavac"><br>
+                <label>Godina izdanja:</label><input class="form-control" formControlName="godinaIzdanja"><br>
+                <label>Jezik:</label><input class="form-control" formControlName="jezik"><br>
+                <label>Broj za dodavanje:</label><input class="form-control" formControlName="ukupno"><br>
+
+                <label>Slika:</label><input type="file" (change)="selectFile($event)">
+            </form>
+            <br>
+            <a (click)="dodajKnjigu()">Dodaj</a><br>
+            <label>{{message}}</label>
+            <hr>
+            <h2>Zahtevi za knjige</h2>
+            <table class="container">
+                <tr>
+                    <th style="min-width: 150px">Naziv</th>
+                    <th style="min-width: 150px">Autor(i)</th>
+                    <th style="min-width: 150px">Zanr</th>
+                    <th style="min-width: 150px">Izdavac</th>
+                    <th style="min-width: 150px">Godina izdanja</th>
+                    <th style="min-width: 150px">Jezik</th>
+                    <th style="min-width: 150px">Slika</th>
+                    <th style="min-width: 150px">Trazio</th>
+                    <th style="min-width: 150px"></th>
+                </tr>
+                <tr *ngFor="let z of sviZahtevi;let i=index">
+                    <td style="min-width: 150px">{{z.naziv}}</td>
+                    <td style="min-width: 150px">{{z.autor}}</td>
+                    <td style="min-width: 150px">{{z.zanr}}</td>
+                    <td style="min-width: 150px">{{z.izdavac}}</td>
+                    <td style="min-width: 150px">{{z.godinaIzdanja}}</td>
+                    <td style="min-width: 150px">{{z.jezik}}</td>
+                    <td style="min-width: 150px">
+                        <div *ngIf="z.slika">
+                            <img [src]="z.slika" style="width: 50px; height: 50px;" class="img-fluid">
+                         </div>
+                         <div *ngIf="!z.slika">
+                            <img src="../../assets/nobook.jpg" style="width: 50px; height: 50px;" class="img-fluid">
+                         </div>
+                    </td>
+                    <td style="min-width: 150px">{{z.korisnickoIme}}</td>
+                    <td>
+                        <a style="font-size:15px" (click)="prihvatiZahtev(z)">Dodaj</a>\
+                        <a style="font-size:15px" (click)="odbaciZahtev(z.korisnickoIme,z.naziv)">Odbaci</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div *ngIf="tip==1">
+            <form [formGroup]="form">
+                <label>Naziv:</label><input class="form-control" formControlName="naziv"><br>
+                <label>Autor(i):</label><input class="form-control" formControlName="autor"><br>
+                <label>Zanr:</label>
+                <div *ngFor="let z of zanrovi">
+                    <input type="checkbox" formArrayName="zanr" [value]="z.value"
+                        (change)="onCheckboxChange($event)">{{z.name}}
+                </div>
+                <br>
+                <label>Izdavac:</label><input class="form-control" formControlName="izdavac"><br>
+                <label>Godina izdanja:</label><input class="form-control" formControlName="godinaIzdanja"><br>
+                <label>Jezik:</label><input class="form-control" formControlName="jezik"><br>
+                
+
+                <label>Slika:</label><input type="file" (change)="selectFile($event)">
+            </form>
+            <br>
+            <a (click)="zahtevZaKnjigu()">Posalji zahtev</a><br>
+            <label>{{message}}</label>
+
+        </div>
+    </div>
+
+
+    <div class="footer">Telvanni inc.</div>
+</body>

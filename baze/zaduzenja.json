@@ -1,0 +1,376 @@
+[{
+  "_id": {
+    "$oid": "63191df39bfe2941b6d58bd2"
+  },
+  "idKnjiga": "0",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2022-06-20",
+  "datumVracanja": "2022-09-10",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "63191df39bfe2941b6d58bd3"
+  },
+  "idKnjiga": "2",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2022-02-01",
+  "datumVracanja": "2022-09-13",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "63191df39bfe2941b6d58bd4"
+  },
+  "idKnjiga": "2",
+  "korisnickoIme": "adam",
+  "datumZaduzenja": "2022-02-01",
+  "datumVracanja": "2022-02-14",
+  "produzenje": 1,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "63191df39bfe2941b6d58bd5"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "adam",
+  "datumZaduzenja": "2022-09-08",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "63191df39bfe2941b6d58bd6"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2022-09-01",
+  "datumVracanja": "2022-09-14",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "63191df39bfe2941b6d58bd7"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "ivana",
+  "datumZaduzenja": "2022-06-01",
+  "datumVracanja": "2022-06-14",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "631b9a722bd449b901e17cc7"
+  },
+  "idKnjiga": "1",
+  "korisnickoIme": "adam",
+  "datumZaduzenja": "2022-09-09",
+  "datumVracanja": "2022-10-9",
+  "__v": 0,
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "631cad8e6e10c25842479b04"
+  },
+  "idKnjiga": "4",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2014-04-01",
+  "datumVracanja": "2014-04-15",
+  "produzenje": 0,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "631cadec6e10c25842479b05"
+  },
+  "idKnjiga": "5",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2022-02-01",
+  "datumVracanja": "2022-02-08",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "631cd2e29e321b9f82ef49e1"
+  },
+  "idKnjiga": "2",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2022-09-10",
+  "datumVracanja": "2022-09-13",
+  "__v": 0,
+  "produzenje": 14,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "631f98c3a6d844cd2951df51"
+  },
+  "idKnjiga": "4",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2022-08-12",
+  "datumVracanja": "",
+  "__v": 0,
+  "produzenje": 14,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "632067bd201d290793c43f99"
+  },
+  "idKnjiga": "2",
+  "korisnickoIme": "stefan",
+  "datumZaduzenja": "2022-09-01",
+  "datumVracanja": "",
+  "produzenje": 14,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6320c12bbe0d5a4aedacb98e"
+  },
+  "idKnjiga": "0",
+  "korisnickoIme": "zoran",
+  "datumZaduzenja": "2022-08-30",
+  "datumVracanja": "",
+  "produzenje": 14,
+  "__v": 0,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "6320c15abe0d5a4aedacb9a9"
+  },
+  "idKnjiga": "8",
+  "korisnickoIme": "zoran",
+  "datumZaduzenja": "2022-09-13",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "__v": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "63224fbef253d93917a4c82b"
+  },
+  "idKnjiga": "3",
+  "korisnickoIme": "stefan",
+  "datumZaduzenja": "2022-08-01",
+  "datumVracanja": "2022-09-16",
+  "produzenje": 0,
+  "rezervacija": 1
+},{
+  "_id": {
+    "$oid": "63225161f253d93917a4c834"
+  },
+  "idKnjiga": "8",
+  "korisnickoIme": "stefan",
+  "datumZaduzenja": "2022-09-01",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "632322119c0c5dcbf7b8dcda"
+  },
+  "idKnjiga": "5",
+  "korisnickoIme": "marija",
+  "datumZaduzenja": "2022-09-15",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63232c749c0c5dcbf7b8dde7"
+  },
+  "idKnjiga": "0",
+  "korisnickoIme": "ana",
+  "datumZaduzenja": "2022-09-15",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6323472f84e9394ae7e470e4"
+  },
+  "idKnjiga": "4",
+  "korisnickoIme": "marija",
+  "datumZaduzenja": "2022-09-15",
+  "datumVracanja": "2022-09-17",
+  "produzenje": 0,
+  "rezervacija": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63234ba57864c7e50235ee3b"
+  },
+  "idKnjiga": "0",
+  "korisnickoIme": "marija",
+  "datumZaduzenja": "2022-09-15",
+  "datumVracanja": "2022-09-17",
+  "produzenje": 0,
+  "rezervacija": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324de18f03fe780b2da042b"
+  },
+  "idKnjiga": "1",
+  "korisnickoIme": "ana",
+  "datumZaduzenja": "2022-09-16",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324e3359681d4eab277fdb1"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-01-20",
+  "datumVracanja": "2022-09-17",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e3659681d4eab277fdb2"
+  },
+  "idKnjiga": "13",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-06-02",
+  "datumVracanja": "2020-06-12",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e3819681d4eab277fdb3"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-11-20",
+  "datumVracanja": "2020-11-30",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e39b9681d4eab277fdb4"
+  },
+  "idKnjiga": "13",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-03-10",
+  "datumVracanja": "2020-03-27",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e3bd9681d4eab277fdb5"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-08-02",
+  "datumVracanja": "2020-08-10",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e3cf9681d4eab277fdb6"
+  },
+  "idKnjiga": "2",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-10-04",
+  "datumVracanja": "2020-10-10",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e40a9681d4eab277fdbd"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-05-10",
+  "datumVracanja": "2020-05-20",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e4179681d4eab277fdbe"
+  },
+  "idKnjiga": "13",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-12-20",
+  "datumVracanja": "2021-01-02",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e4369681d4eab277fdbf"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-07-24",
+  "datumVracanja": "2020-08-10",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324e45b9681d4eab277fdc0"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "pera",
+  "datumZaduzenja": "2020-08-20",
+  "datumVracanja": "2020-08-22",
+  "produzenje": 0,
+  "rezervacija": 0
+},{
+  "_id": {
+    "$oid": "6324f323f03fe780b2da06f2"
+  },
+  "idKnjiga": "13",
+  "korisnickoIme": "mihailo",
+  "datumZaduzenja": "2022-09-17",
+  "datumVracanja": "",
+  "produzenje": 14,
+  "rezervacija": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324f765f03fe780b2da086e"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "milos",
+  "datumZaduzenja": "2022-09-17",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324f765f03fe780b2da0872"
+  },
+  "idKnjiga": "15",
+  "korisnickoIme": "mihailo",
+  "datumZaduzenja": "2022-09-17",
+  "datumVracanja": "",
+  "produzenje": 4,
+  "rezervacija": 1,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324f7d8f03fe780b2da08cb"
+  },
+  "idKnjiga": "12",
+  "korisnickoIme": "milos",
+  "datumZaduzenja": "2022-09-17",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328ef65512927e779d21231"
+  },
+  "idKnjiga": "8",
+  "korisnickoIme": "ivana",
+  "datumZaduzenja": "2022-09-10",
+  "datumVracanja": "",
+  "produzenje": 0,
+  "rezervacija": 1,
+  "__v": 0
+}]

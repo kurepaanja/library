@@ -1,0 +1,35 @@
+<body>
+   <div class="header">
+      <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+      <h1>{{korisnik.ime}} {{korisnik.prezime}}</h1>
+      <img src="../../assets/header_two.png"
+         style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+   </div>
+   <router-outlet></router-outlet>
+
+
+   <div class="center">
+      <div *ngIf="imaZahteva">
+         <h2>Pending</h2>
+         <table class="container">
+
+            <tr *ngFor="let k of sviNeregKorisnici" class=".table-row" style="padding-bottom: 40px;">
+               <td style="min-width: 200px">{{k.ime}} {{k.prezime}}</td>
+               <td style="min-width: 200px">
+                  <a (click)="prihvati(k.korisnickoIme)">Prihvati</a>
+               </td>
+               <td style="min-width: 200px">
+                  <a (click)="odbaci(k.korisnickoIme)">Odbaci</a>
+               </td>
+            </tr>
+         </table>
+
+      </div>
+      <div *ngIf="!imaZahteva">
+         <h2>Nema zahteva</h2>
+      </div>
+   </div>
+
+
+   <div class="footer">Telvanni inc.</div>
+</body>

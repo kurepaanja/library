@@ -1,0 +1,99 @@
+[{
+  "_id": {
+    "$oid": "63231a4484e9394ae7e470d5"
+  },
+  "idKnjiga": "0",
+  "korisnici": [
+    "pera",
+    "mark"
+  ],
+  "turn": 2
+},{
+  "_id": {
+    "$oid": "632495759681d4eab277fd6e"
+  },
+  "idKnjiga": "1",
+  "korisnici": [
+    "pera"
+  ],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495939681d4eab277fd6f"
+  },
+  "idKnjiga": "2",
+  "korisnici": [
+    "ana",
+    "mihailo",
+    "mark",
+    "marija"
+  ],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "6324959a9681d4eab277fd70"
+  },
+  "idKnjiga": "3",
+  "korisnici": [],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495a39681d4eab277fd71"
+  },
+  "idKnjiga": "4",
+  "korisnici": [],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495aa9681d4eab277fd72"
+  },
+  "idKnjiga": "5",
+  "korisnici": [],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495b19681d4eab277fd73"
+  },
+  "idKnjiga": "6",
+  "korisnici": [],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495ba9681d4eab277fd74"
+  },
+  "idKnjiga": "7",
+  "korisnici": [],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495c29681d4eab277fd75"
+  },
+  "idKnjiga": "8",
+  "korisnici": [
+    "ana"
+  ],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "632495d39681d4eab277fd76"
+  },
+  "idKnjiga": "12",
+  "korisnici": [],
+  "turn": 0
+},{
+  "_id": {
+    "$oid": "6324998ba0a8db0d6d0eaa95"
+  },
+  "idKnjiga": "13",
+  "korisnici": [],
+  "turn": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6324f5f49681d4eab277fde3"
+  },
+  "idKnjiga": "15",
+  "korisnici": [],
+  "turn": 0,
+  "__v": 0
+}]

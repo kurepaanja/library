@@ -1,0 +1,96 @@
+
+<hr>
+
+
+<!-- <div class="topnav">
+    <a routerLing="Login">LOGIN</a>
+    <router-outlet></router-outlet>
+</div> -->
+
+
+<div *ngIf="!ulogovan" style="text-align: center;" class="topnav">
+    <a href="login">Login</a>   
+    <a href="register">Registracija</a>   
+    <a href="pretraga">Pretraga</a>
+    <a href="">Pocetna stranica</a>
+</div>
+<div *ngIf></div>
+
+
+<div *ngIf="ulogovan" style="text-align: center;" class="topnav">
+    <div *ngIf="tip==1">
+        <a>
+            <div *ngIf="hasImage" >
+                <img [src]="korisnik.slika" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+            <div *ngIf="!hasImage"  >
+                <img src="../../assets/noicon.jpg" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+        </a>
+        <a href="citalacMain">Pocetna</a>
+        <a href="pretraga">Pretraga</a>
+        <a href="pregledZaduzenja">Trenutna zaduzenja</a>
+        <a href="istorijaZaduzenja">Istorija zaduzenja</a>
+        <a href="dodajKnjigu">Zahtev za novu knjigu</a>
+        <a href="promenaSifre">Promena sifre</a>
+        <a href="" (click)="logout()">Log out</a>
+    </div>
+
+    <div *ngIf="tip==2">
+        <a>
+            <div *ngIf="hasImage" >
+                <img [src]="korisnik.slika" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+            <div *ngIf="!hasImage"  >
+                <img src="../../assets/noicon.jpg" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+        </a>
+        <a href="citalacMain">Pocetna</a>
+        <a href="dodajKnjigu">Dodaj knjigu</a>
+        <a href="pretraga">Pretraga</a>
+        <a href="pregledZaduzenja">Trenutna zaduzenja</a>
+        <a href="istorijaZaduzenja">Istorija zaduzenja</a>
+        <a href="promenaSifre">Promena sifre</a>
+        <a href="" (click)="logout()">Log out</a>
+    </div>
+
+    <div *ngIf="tip==3">
+        <a>
+            <div *ngIf="hasImage" >
+                <img [src]="korisnik.slika" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+            <div *ngIf="!hasImage"  >
+                <img src="../../assets/noicon.jpg" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+        </a>
+        <a href="admin">Pocetna</a>
+        <a href="adminRegistracija">Zahtevi za registraciju</a>
+        <a href="adminKorisnik">Korisnici</a>
+        <a href="adminKnjiga">Knjige</a>
+       
+        <a href="" (click)="logout()">Log out</a>
+    </div>
+
+    <div *ngIf="tip==5">
+        <a>
+            <div *ngIf="hasImage" >
+                <img [src]="korisnik.slika" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+            <div *ngIf="!hasImage"  >
+                <img src="../../assets/noicon.jpg" style="width: 50px; height: 50px;" (click)="profil()" class="img-fluid">
+            </div>
+        </a>
+        <a href="citalacMain">Pocetna</a>
+        <a href="pretraga">Pretraga</a>
+        <a href="pregledZaduzenja">Trenutna zaduzenja</a>
+        <a href="istorijaZaduzenja">Istorija zaduzenja</a>
+        <a href="promenaSifre">Promena sifre</a>
+        <a href="" (click)="logout()">Log out</a>
+
+
+    </div>
+    
+    
+   
+    
+</div>

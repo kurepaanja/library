@@ -1,0 +1,75 @@
+<body>
+   <div class="header">
+      <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+      <h1>{{korisnik.ime}} {{korisnik.prezime}}</h1>
+      <img src="../../assets/header_two.png"
+         style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+   </div>
+<router-outlet></router-outlet>
+
+   
+     
+   
+
+   <div class="center">
+      <div class="wrapper">
+         <div class="inner1">
+      <h2>Knjiga dana</h2>
+      <div *ngIf="hasImage" style="width:30%; float: left; "  >
+         <img [src]="izabranaKnjiga.slika" style="max-height:100px;max-width:100px;height:auto;width:auto;"  class="img-fluid">
+     </div>
+     <div *ngIf="!hasImage" style="width:30%; float: left; " >
+         <img src="../../assets/nobook.jpg" style="max-height:100px;max-width:100px;height:auto;width:auto;"  class="img-fluid">
+     </div>
+     <div style="width: 60%; float:right; font-size: 20px; padding-top:30px ;font-size: 20px; text-align: left;">
+        Naziv knjige: {{izabranaKnjiga.naziv}}<br>
+        Autor(i): {{izabranaKnjiga.autor}}<br>
+        <div *ngIf="prosecnaOcena">
+         Prosecna ocena: {{prosecnaOcena}}
+        </div>
+        <div *ngIf="!prosecnaOcena">
+         Prosecna ocena: Knjiga nije ocenjena
+        </div>
+     </div>
+   </div>
+   <div class="inner2">
+      <h2>Obavestenja</h2>
+      <div *ngIf="imaObavestenje">
+         <div *ngIf="blokiran" style="text-align: left;">
+            -Trenutno ste blokirani.
+         </div>
+         <div *ngIf="rokZaVracanjeSkoro" style="text-align:left ;">
+            -Skoro istice rok za vracanje:
+            <div *ngFor="let k of listaKnjigaSkoro" style="padding-left:30px;">●{{k.naziv}}</div>
+         </div>
+         <div *ngIf="rokZaVracanjeIsteko" style="text-align:left ;">
+            -Proso je rok za vracanje: 
+            <div *ngFor="let k of listaKnjigaIsteklo" style="padding-left:30px;">●{{k.naziv}}</div>
+         </div>
+         <div *ngIf="triKnjige" style="text-align: left;">
+            -Imate trenutno tri knjige zaduzene.
+         </div>
+         <div *ngIf="dodataZahtevanaKnjiga"  style="text-align:left ;">
+            -Zahtev za dodavanje je prihvacen za:
+            <div *ngFor="let k of prihvaceneDodateKnjige" style="padding-left:30px;">●{{k.naziv}}</div>
+         </div>
+         <div *ngIf="rezervacijaDostupna"  style="text-align:left ;">
+            -Rezervisane knjige dodate u zaduzenje:
+            <div *ngFor="let k of listaRezervisaneKnjige" style="padding-left:30px;">●{{k.naziv}}</div>
+         </div>
+         
+      </div>
+      <div *ngIf="!imaObavestenje">
+         Nemate obavestenja
+      </div>
+      
+   </div>
+   </div>
+   
+      
+    
+   </div>
+
+
+<div class="footer">Telvanni inc.</div>
+</body>

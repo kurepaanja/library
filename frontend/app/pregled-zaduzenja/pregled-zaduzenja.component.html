@@ -1,0 +1,64 @@
+<body>
+    <div class="header">
+        <img src="../../assets/header_two.png" style="width: 60px; height: 60px;float:left ;" class="img-fluid">
+        <h1>{{korisnik.ime}} {{korisnik.prezime}}-Trenutna zaduzenja</h1>
+        <img src="../../assets/header_two.png"
+           style="width: 60px; height: 60px;float:right;position: absolute;right: 2%;top: 3%;" class="img-fluid">
+     </div>
+<router-outlet></router-outlet>
+
+    <div class="center">
+        <div *ngIf="imaZaduzenja">
+            
+            <table class="container">
+                <tr *ngFor="let b of lista" class=" .table-row ">
+                    
+                    <div *ngIf="b.slika">
+                        
+                        <td style="min-width: 100px"> <img [src]="b.slika" style="max-height:100px;max-width:100px;height:auto;width:auto;"  class="img-fluid" > </td>
+                    </div>
+                    <div *ngIf="!b.slika">
+                        <td style="min-width: 100px"> <img src="../../assets/nobook.jpg" style="max-height:100px;max-width:100px;height:auto;width:auto;"  class="img-fluid" > </td>
+                    </div> 
+                    <td style="min-width: 150px; font-size: 20px;">{{b.naziv}}</td>
+                    <td style="min-width: 200px; font-size: 20px;">{{b.autor}}</td>
+
+                    
+                    
+                    <td style="min-width: 200px; font-size: 20px;">
+                        <div *ngIf="!b.kasni">
+                            Imate {{b.rokVracanja}} dana da vratite knjigu
+                        </div>  
+                        <div *ngIf="b.kasni">
+                            Kasnite sa vracanjem knjige {{b.rokVracanja}} dana!
+                        </div>  
+                    </td>
+
+                    
+                    <td tyle="min-width: 150px; font-size: 20px;">
+                        <div *ngIf="korisnik.tip!='5'">
+                            <a style="width: 100px;" (click)="routeKnjiga(b.idKnjiga)">Detalji</a><br>
+                        </div>
+                        
+                        <div *ngIf="b.produzenje==0">
+                            <a (click)="produzi(b.idKnjiga)">Produzi</a>
+                        </div>
+                            
+                        
+                        <a style="width: 200px;" (click)="vratiKnjigu(b.idKnjiga,b.korisnickoIme)">Vrati knjigu</a>
+                    </td>
+                </tr>
+                    
+                
+            </table>
+
+        </div>
+        
+
+        <div *ngIf="!imaZaduzenja">
+            Nemate knjige ne zaduzenju.
+        </div>
+    </div>
+
+<div class="footer">Telvanni inc.</div>
+</body>

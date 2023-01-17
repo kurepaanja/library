@@ -1,0 +1,90 @@
+
+
+
+.header{
+  background-color: #a92323;
+  padding:20px;
+  text-align: center;
+  color: #f3ddc0;
+}
+
+
+.center {
+  margin: auto;
+  width: auto;
+  border: 20px solid #a92323;
+  padding: 10px;
+  background-color: #f3ddc0;
+  text-align: center;
+  
+  }
+
+
+
+  .footer{
+    background-color: #a92323;
+    padding:20px;
+    text-align: right;
+    margin-top: auto;
+    color: #f3ddc0;
+  }
+  
+
+
+body{
+  background-image: url(../../assets/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+   margin: 0;
+   overflow-y: scroll; 
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*td { border: solid black 1px;}*/
+
+
+
+.text{
+  text-align: center;
+}
+
+h1 { color: #f3ddc0; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+a { color: #ca0d16; text-decoration: none; font-size: 20px; }
+
+
+a:hover { color: #ffcc66 }
+
+label{
+  font-size: 19px;
+  width: 150px;
+  display: inline-block;
+  margin:4px;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #a92323;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+
+
+
+
